@@ -26,6 +26,7 @@ namespace _2018848063_ERP
         private void Btn_Search_Click(object sender, EventArgs e)
         {
             DBSelect();
+
         }
 
         private void Btn_Regi_Click(object sender, EventArgs e)
@@ -43,6 +44,11 @@ namespace _2018848063_ERP
 
             // DataSet을 DataGridView 컨트롤에 바인딩
             dataGridView1.DataSource = dataSet.Tables[0];
+        }
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            //https://warehouseofdev.tistory.com/entry/GridView-Check-%EB%B0%95%EC%8A%A4-%EA%B0%92-%EB%B0%9B%EC%95%84%EC%98%A4%EA%B8%B0
         }
     }
 }

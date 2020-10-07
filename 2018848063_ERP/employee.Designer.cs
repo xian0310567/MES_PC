@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CheckBox_1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Sch_Depart = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +39,7 @@
             this.Btn_Regi = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.Btn_Search = new System.Windows.Forms.Button();
+            this.table_Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -58,21 +58,16 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CheckBox_1});
+            this.table_Check});
             this.dataGridView1.Location = new System.Drawing.Point(3, 62);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1048, 540);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // CheckBox_1
-            // 
-            this.CheckBox_1.Frozen = true;
-            this.CheckBox_1.HeaderText = " ";
-            this.CheckBox_1.Name = "CheckBox_1";
             // 
             // groupBox1
             // 
@@ -164,6 +159,7 @@
             this.Btn_Delete.TabIndex = 3;
             this.Btn_Delete.Text = "삭제";
             this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
             // Btn_Search
             // 
@@ -175,6 +171,13 @@
             this.Btn_Search.Text = "조회";
             this.Btn_Search.UseVisualStyleBackColor = true;
             this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
+            // 
+            // table_Check
+            // 
+            this.table_Check.Frozen = true;
+            this.table_Check.HeaderText = " ";
+            this.table_Check.Name = "table_Check";
+            this.table_Check.Width = 15;
             // 
             // employee
             // 
@@ -204,10 +207,10 @@
         private System.Windows.Forms.Button Btn_Regi;
         private System.Windows.Forms.Button Btn_Delete;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn CheckBox_1;
         private System.Windows.Forms.ComboBox Sch_Depart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Sch_Name;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn table_Check;
     }
 }
