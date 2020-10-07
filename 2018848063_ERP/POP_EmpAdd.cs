@@ -26,7 +26,7 @@ namespace _2018848063_ERP
 
             CV_Check();
         }
-
+        
         public void CV_Check()
         {
             txt_Depart.Text = DV_Name;
