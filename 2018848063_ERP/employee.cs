@@ -15,53 +15,65 @@ namespace _2018848063_ERP
     public partial class employee : Form
     {
         DBHelper dbh = new DBHelper();
+        string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
+        string Ssql = "SELECT EmpNo, Name,Depart,Grade,WForm,PhoneNum,Join_Date FROM Employee";
 
         public employee()
         {
             InitializeComponent();
-            DBSelect();
+
+            DataSet dataSet = dbh.DBSelect(Ssql);
+            dataGridView1.DataSource = dataSet.Tables[0];
         }
 
+        #region 조회버튼
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-            DBSelect();
-
+            DataSet dataSet = dbh.DBSelect(Ssql);
+            dataGridView1.DataSource = dataSet.Tables[0];
         }
+        #endregion
 
+        #region 등록버튼
         private void Btn_Regi_Click(object sender, EventArgs e)
         {
             POP_EmpAdd POP_Add = new POP_EmpAdd("normal", "", "");
             POP_Add.Show();
         }
+        #endregion
 
-        public void DBSelect()
-        {
-            string sqlS = "SELECT EmpNo, Name,Depart,Grade,WForm,PhoneNum,Join_Date FROM Employee";
-            //employee sample = new employee();
-
-            DataSet dataSet = dbh.DBSelect(sqlS);
-
-            // DataSet을 DataGridView 컨트롤에 바인딩
-            dataGridView1.DataSource = dataSet.Tables[0];
-        }
-
-        public void DB_Row()
-        {
-            //
-        }
-
+        #region 삭제버튼
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-            string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
-            SqlConnection cn = new SqlConnection(dbcon);
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                bool isChecked = Convert.ToBoolean(dataGridView1.Rows[i].Cells[0].Value);
+                string empNo = Convert.ToString(dataGridView1.Rows[i].Cells[1].Value);
 
-            SqlCommand cm = new SqlCommand("DELETE FROM employee WHERE EmpNo = @No", cn);
-            cm.Parameters.Add("@No", SqlDbType.Int).Value = 1;
-            cn.Open();
-            cm.ExecuteNonQuery();
-            cn.Close();
+                if (isChecked)
+                {
+                    try
+                    {
+                        SqlConnection cn = new SqlConnection(dbcon);
+                        SqlCommand cm = new SqlCommand("DELETE FROM employee WHERE EmpNo = @No", cn);
+                        //cm.Parameters.Add("@No", SqlDbType.Int).Value = 1;
+                        cm.Parameters.AddWithValue("@No", empNo);
 
-            //삭제 기능 체크박스로 기능 설정 가능하게 하고 DB 헬퍼 변경하기
+                        cn.Open();
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+
+                        //DB Select
+                        DataSet dataSet = dbh.DBSelect(Ssql);
+                        dataGridView1.DataSource = dataSet.Tables[0];
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+            }
         }
+        #endregion
     }
 }

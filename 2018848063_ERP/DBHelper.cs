@@ -24,23 +24,23 @@ namespace _2018848063_ERP
             }
             catch(Exception ex)
             {
-                MessageBox.Show("접속실패" + ex.ToString());
+                MessageBox.Show(ex.ToString());
             }
         }
 
-        //DB Select
         public DataSet DBSelect(string Ssql)
         {
-            SqlConnection conn = new SqlConnection(dbcon);
+                SqlConnection conn = new SqlConnection(dbcon);
+ 
+                SqlDataAdapter adapter = new SqlDataAdapter(Ssql, conn);
 
-            DataSet ds = new DataSet();
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
 
-            SqlDataAdapter adapter = new SqlDataAdapter(Ssql, dbcon);
+                return ds;
 
-            adapter.Fill(ds);
-
-            conn.Close();
-            return ds;
+            //SqlCommand 파라미터의 값을 넘겨 줄 수 있는 방법이 있지 않을까
+            //adapter 사용법 더 알아보기
         }
     }
 }

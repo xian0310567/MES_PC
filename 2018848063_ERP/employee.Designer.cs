@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.table_Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Sch_Depart = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.Btn_Regi = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.Btn_Search = new System.Windows.Forms.Button();
-            this.table_Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,6 +68,13 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1048, 540);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // table_Check
+            // 
+            this.table_Check.Frozen = true;
+            this.table_Check.HeaderText = " ";
+            this.table_Check.Name = "table_Check";
+            this.table_Check.Width = 15;
             // 
             // groupBox1
             // 
@@ -171,13 +178,6 @@
             this.Btn_Search.Text = "조회";
             this.Btn_Search.UseVisualStyleBackColor = true;
             this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
-            // 
-            // table_Check
-            // 
-            this.table_Check.Frozen = true;
-            this.table_Check.HeaderText = " ";
-            this.table_Check.Name = "table_Check";
-            this.table_Check.Width = 15;
             // 
             // employee
             // 
