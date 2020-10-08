@@ -15,7 +15,6 @@ namespace _2018848063_ERP
     public partial class employee : Form
     {
         DBHelper dbh = new DBHelper();
-        
 
         public employee()
         {
@@ -37,7 +36,7 @@ namespace _2018848063_ERP
 
         public void DBSelect()
         {
-            string sqlS = "SELECT Name,Depart,Grade,WForm,PhoneNum,Join_Date FROM Employee";
+            string sqlS = "SELECT EmpNo, Name,Depart,Grade,WForm,PhoneNum,Join_Date FROM Employee";
             //employee sample = new employee();
 
             DataSet dataSet = dbh.DBSelect(sqlS);
@@ -46,9 +45,23 @@ namespace _2018848063_ERP
             dataGridView1.DataSource = dataSet.Tables[0];
         }
 
+        public void DB_Row()
+        {
+            //
+        }
+
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
-            //https://warehouseofdev.tistory.com/entry/GridView-Check-%EB%B0%95%EC%8A%A4-%EA%B0%92-%EB%B0%9B%EC%95%84%EC%98%A4%EA%B8%B0
+            string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
+            SqlConnection cn = new SqlConnection(dbcon);
+
+            SqlCommand cm = new SqlCommand("DELETE FROM employee WHERE EmpNo = @No", cn);
+            cm.Parameters.Add("@No", SqlDbType.Int).Value = 1;
+            cn.Open();
+            cm.ExecuteNonQuery();
+            cn.Close();
+
+            //삭제 기능 체크박스로 기능 설정 가능하게 하고 DB 헬퍼 변경하기
         }
     }
 }
