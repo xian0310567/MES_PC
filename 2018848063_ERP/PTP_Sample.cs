@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Runtime.CompilerServices;
 
 namespace _2018848063_ERP
 {
     public partial class PTP_Sample : Form
     {
         string TcTT;
-        DBHelper dbh = new DBHelper();
+        string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
 
         public PTP_Sample(string ment)
         {
@@ -24,14 +26,21 @@ namespace _2018848063_ERP
             DBSelect();
         }
 
+        #region 조회 기능
         private void  DBSelect()
         {
             string Ssql = "SELECT * FROM " + TcTT;
 
-            DataSet dataSet = dbh.DBSelect(Ssql);
+            SqlConnection conn = new SqlConnection(dbcon);
 
-            dataGridView1.DataSource = dataSet.Tables[0];
+            SqlDataAdapter da = new SqlDataAdapter(Ssql, conn);
+            DataSet ds = new DataSet();
+
+            da.Fill(ds);
+
+            dataGridView1.DataSource = ds.Tables[0];
         }
+        #endregion
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -44,6 +53,8 @@ namespace _2018848063_ERP
             POP_EmpAdd POP = new POP_EmpAdd(CV, DV1, DV2);
             POP.Owner = this;
 
+            POP.txt_Depart.Text = "aa";
+            
             this.Close();
         }
     }

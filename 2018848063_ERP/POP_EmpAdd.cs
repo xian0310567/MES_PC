@@ -22,7 +22,9 @@ namespace _2018848063_ERP
             InitializeComponent();
             this.CV1 = CV;       //확인코드
             this.DV_No = DV1;    
-            this.DV_Name = DV2;
+            DV_Name = DV2;
+
+            txt_Depart.Text = DV_Name;
 
             CV_Check();
         }
@@ -30,12 +32,11 @@ namespace _2018848063_ERP
         public void CV_Check()
         {
             txt_Depart.Text = DV_Name;
-
             switch (CV1)
             {   
                 case "Department":
                     txt_Depart.Text = DV_Name;
-                    MessageBox.Show(DV_Name);
+                    MessageBox.Show(CV1);
                     break;
                 case "Grade":
                     txt_Grade.Text = DV_Name;
@@ -51,7 +52,7 @@ namespace _2018848063_ERP
         {
             PTP_Sample PTP = new PTP_Sample("Department");
             PTP.Owner = this;
-            PTP.ShowDialog();
+            PTP.ShowDialog(this);
         }
 
         //직급 버튼
@@ -67,11 +68,12 @@ namespace _2018848063_ERP
         {
             //테이블 작성하고 변수 변경 요망
             PTP_Sample PTP = new PTP_Sample("WForm");
+            
             PTP.Owner = this;
             PTP.ShowDialog();
         }
 
-        //등록 버튼
+        #region 등록 버튼
         private void button1_Click(object sender, EventArgs e)
         {
             if(txt_Name.Text == "")
@@ -83,7 +85,7 @@ namespace _2018848063_ERP
                 string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
                 string Ssql = "insert into employee (Name,Depart,Grade,WForm,PhoneNum,Join_Date,Date) values (@Name,@Depart,@Grade,@WForm,@Phone_Num,@Join_Date,@Date)";
 
-                DataSet ds = new DataSet();
+                //DataSet ds = new DataSet();
                 SqlConnection conn = new SqlConnection(dbcon);
                 SqlCommand cmd = new SqlCommand(Ssql, conn);
 
@@ -108,8 +110,9 @@ namespace _2018848063_ERP
                 MessageBox.Show(EX.ToString());
             }
         }
+        #endregion
 
-        //초기화 버튼
+        #region 초기화 버튼
         private void button2_Click(object sender, EventArgs e)
         {
             reset_Text();
@@ -118,11 +121,12 @@ namespace _2018848063_ERP
         public void reset_Text()
         {
             txt_Name.Text = "";
-            txt_Depart.Text = "";
+            txt_Depart.Text = "Depart";
             txt_Grade.Text = "";
             txt_WForm.Text = "";
             txt_Phone_num.Text = "";
             txt_Join_Date.Text = "";
         }
+        #endregion
     }
 }

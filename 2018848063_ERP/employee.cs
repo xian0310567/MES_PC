@@ -22,15 +22,25 @@ namespace _2018848063_ERP
         {
             InitializeComponent();
 
-            DataSet dataSet = dbh.DBSelect(Ssql);
-            dataGridView1.DataSource = dataSet.Tables[0];
+            DB_Select();
         }
 
         #region 조회버튼
         private void Btn_Search_Click(object sender, EventArgs e)
         {
-            DataSet dataSet = dbh.DBSelect(Ssql);
-            dataGridView1.DataSource = dataSet.Tables[0];
+            DB_Select();
+        }
+
+        public void DB_Select()
+        {
+            SqlConnection conn = new SqlConnection(dbcon);
+
+            SqlDataAdapter da = new SqlDataAdapter(Ssql, conn);
+            DataSet ds = new DataSet();
+
+            da.Fill(ds);
+
+            dataGridView1.DataSource = ds.Tables[0];
         }
         #endregion
 
