@@ -17,12 +17,9 @@ namespace _2018848063_ERP
         employee emp = new employee();
 
         string CV1, DV_No, DV_Name;
-        public POP_EmpAdd(string CV, string DV1, string DV2)
+        public POP_EmpAdd()
         {
             InitializeComponent();
-            this.CV1 = CV;       //확인코드
-            this.DV_No = DV1;    
-            DV_Name = DV2;
 
             txt_Depart.Text = DV_Name;
 

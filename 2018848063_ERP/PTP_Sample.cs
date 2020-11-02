@@ -44,14 +44,7 @@ namespace _2018848063_ERP
 
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string CV, DV1, DV2;
-
-            CV = TcTT;
-            DV1 = this.dataGridView1.Rows[this.dataGridView1.CurrentCellAddress.Y].Cells[0].Value.ToString();
-            DV2 = this.dataGridView1.Rows[this.dataGridView1.CurrentCellAddress.Y].Cells[1].Value.ToString();
-
-            POP_EmpAdd POP = new POP_EmpAdd(CV, DV1, DV2);
-            POP.Owner = this;
+            POP_EmpAdd POP = new POP_EmpAdd();
 
             POP.txt_Depart.Text = "aa";
             

@@ -47,7 +47,7 @@ namespace _2018848063_ERP
         #region 등록버튼
         private void Btn_Regi_Click(object sender, EventArgs e)
         {
-            POP_EmpAdd POP_Add = new POP_EmpAdd("normal", "", "");
+            POP_EmpAdd POP_Add = new POP_EmpAdd();
             POP_Add.Show();
         }
         #endregion
