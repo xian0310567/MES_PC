@@ -19,7 +19,7 @@ namespace _2018848063_ERP
 
         private void 사원정보ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            employee newMDIChild = new employee();
+            Employee newMDIChild = new Employee();
             newMDIChild.MdiParent = this;
             newMDIChild.Show();
         }

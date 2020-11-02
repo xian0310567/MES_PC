@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
-    <Compile Include="employee.cs">
+    <Compile Include="Employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="employee.Designer.cs">
-      <DependentUpon>employee.cs</DependentUpon>
+    <Compile Include="Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="PTP_Sample.cs">
       <SubType>Form</SubType>
@@ -73,8 +73,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="employee.resx">
-      <DependentUpon>employee.cs</DependentUpon>
+    <EmbeddedResource Include="Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="POP_EmpAdd.resx">
       <DependentUpon>POP_EmpAdd.cs</DependentUpon>

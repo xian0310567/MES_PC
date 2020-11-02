@@ -1,6 +1,6 @@
 ﻿namespace _2018848063_ERP
 {
-    partial class employee
+    partial class Employee
     {
         /// <summary>
         /// Required designer variable.

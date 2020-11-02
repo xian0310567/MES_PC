@@ -12,13 +12,12 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace _2018848063_ERP
 {
-    public partial class employee : Form
+    public partial class Employee : Form
     {
-        DBHelper dbh = new DBHelper();
         string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
         string Ssql = "SELECT EmpNo, Name,Depart,Grade,WForm,PhoneNum,Join_Date FROM Employee";
 
-        public employee()
+        public Employee()
         {
             InitializeComponent();
 
@@ -66,16 +65,17 @@ namespace _2018848063_ERP
                     {
                         SqlConnection cn = new SqlConnection(dbcon);
                         SqlCommand cm = new SqlCommand("DELETE FROM employee WHERE EmpNo = @No", cn);
-                        //cm.Parameters.Add("@No", SqlDbType.Int).Value = 1;
+                        //AI 값을 가진 EmpNo를 기준으로 삭제
+
                         cm.Parameters.AddWithValue("@No", empNo);
 
                         cn.Open();
                         cm.ExecuteNonQuery();
                         cn.Close();
 
-                        //DB Select
-                        DataSet dataSet = dbh.DBSelect(Ssql);
-                        dataGridView1.DataSource = dataSet.Tables[0];
+                        DB_Select();
+
+                        //여러개를 한번에 삭제 할 수 있는 기능 추가하기
                     }
                     catch (Exception ex)
                     {

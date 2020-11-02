@@ -39,12 +39,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_Phone_num = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txt_Join_Date = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.txt_Join_Date = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // txt_Name
@@ -139,13 +139,6 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "입사일";
             // 
-            // txt_Join_Date
-            // 
-            this.txt_Join_Date.Location = new System.Drawing.Point(106, 268);
-            this.txt_Join_Date.Name = "txt_Join_Date";
-            this.txt_Join_Date.Size = new System.Drawing.Size(150, 21);
-            this.txt_Join_Date.TabIndex = 10;
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(38, 310);
@@ -196,18 +189,26 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // txt_Join_Date
+            // 
+            this.txt_Join_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.txt_Join_Date.Location = new System.Drawing.Point(103, 262);
+            this.txt_Join_Date.Name = "txt_Join_Date";
+            this.txt_Join_Date.Size = new System.Drawing.Size(153, 21);
+            this.txt_Join_Date.TabIndex = 17;
+            // 
             // POP_EmpAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(315, 391);
+            this.Controls.Add(this.txt_Join_Date);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_Join_Date);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_Phone_num);
             this.Controls.Add(this.label4);
@@ -235,7 +236,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_Phone_num;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_Join_Date;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -244,5 +244,6 @@
         public System.Windows.Forms.TextBox txt_Depart;
         public System.Windows.Forms.TextBox txt_Grade;
         public System.Windows.Forms.TextBox txt_WForm;
+        private System.Windows.Forms.DateTimePicker txt_Join_Date;
     }
 }

@@ -14,7 +14,7 @@ namespace _2018848063_ERP
     public partial class POP_EmpAdd : Form
     {
         DBHelper dbh = new DBHelper();
-        employee emp = new employee();
+        Employee emp = new Employee();
 
         public POP_EmpAdd()
         {
@@ -50,11 +50,6 @@ namespace _2018848063_ERP
         #region 등록 버튼
         private void button1_Click(object sender, EventArgs e)
         {
-            if(txt_Name.Text == "")
-            {
-                MessageBox.Show("이름을 입력해주세요.");
-            }
-           
             try {
                 string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
                 string Ssql = "insert into employee (Name,Depart,Grade,WForm,PhoneNum,Join_Date,Date) values (@Name,@Depart,@Grade,@WForm,@Phone_Num,@Join_Date,@Date)";

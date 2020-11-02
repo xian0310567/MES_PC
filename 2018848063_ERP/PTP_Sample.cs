@@ -40,6 +40,7 @@ namespace _2018848063_ERP
         private void  DBSelect()
         {
             string Ssql = "SELECT * FROM " + TcTT;
+            // 받아온 기본 값을 바탕으로 테이블을 불러옴
 
             SqlConnection conn = new SqlConnection(dbcon);
 
@@ -55,12 +56,13 @@ namespace _2018848063_ERP
         #region 더블클릭시 실행
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            
             DV = this.dataGridView1.Rows[this.dataGridView1.CurrentCellAddress.Y].Cells[1].Value.ToString();
+            //코드 번호를 제외한 부서명, 직급명, 고용형태 받아옴
 
             TcTT_Check();
+            //DV값을 POP_EmpAdd 폼의 텍스트 박스에 넣어줌
 
-            employee emp = new employee();
+            Employee emp = new Employee();
             emp.DB_Select();
 
             this.Close();
