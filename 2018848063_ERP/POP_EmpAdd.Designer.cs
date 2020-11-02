@@ -231,9 +231,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_Grade;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_WForm;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_Phone_num;
         private System.Windows.Forms.Label label6;
@@ -244,5 +242,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.TextBox txt_Depart;
+        public System.Windows.Forms.TextBox txt_Grade;
+        public System.Windows.Forms.TextBox txt_WForm;
     }
 }

@@ -16,38 +16,16 @@ namespace _2018848063_ERP
         DBHelper dbh = new DBHelper();
         employee emp = new employee();
 
-        string CV1, DV_No, DV_Name;
         public POP_EmpAdd()
         {
             InitializeComponent();
-
-            txt_Depart.Text = DV_Name;
-
-            CV_Check();
         }
         
-        public void CV_Check()
-        {
-            txt_Depart.Text = DV_Name;
-            switch (CV1)
-            {   
-                case "Department":
-                    txt_Depart.Text = DV_Name;
-                    MessageBox.Show(CV1);
-                    break;
-                case "Grade":
-                    txt_Grade.Text = DV_Name;
-                    break;
-                case "WForm":
-                    txt_WForm.Text = DV_Name;
-                    break;
-            }
-        }
 
         //부서 버튼
         private void button3_Click(object sender, EventArgs e)
         {
-            PTP_Sample PTP = new PTP_Sample("Department");
+            PTP_Sample PTP = new PTP_Sample(this, "Department");
             PTP.Owner = this;
             PTP.ShowDialog(this);
         }
@@ -55,7 +33,7 @@ namespace _2018848063_ERP
         //직급 버튼
         private void button4_Click(object sender, EventArgs e)
         {
-            PTP_Sample PTP = new PTP_Sample("Grade");
+            PTP_Sample PTP = new PTP_Sample(this, "Grade");
             PTP.Owner = this;
             PTP.ShowDialog();
         }
@@ -63,8 +41,7 @@ namespace _2018848063_ERP
         //고용형태 버튼
         private void button5_Click(object sender, EventArgs e)
         {
-            //테이블 작성하고 변수 변경 요망
-            PTP_Sample PTP = new PTP_Sample("WForm");
+            PTP_Sample PTP = new PTP_Sample(this, "WForm");
             
             PTP.Owner = this;
             PTP.ShowDialog();

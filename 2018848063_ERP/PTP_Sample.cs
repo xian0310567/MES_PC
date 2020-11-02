@@ -15,11 +15,21 @@ namespace _2018848063_ERP
     public partial class PTP_Sample : Form
     {
         string TcTT;
+        string DV;
         string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
 
-        public PTP_Sample(string ment)
+        POP_EmpAdd p1;
+
+        public PTP_Sample()
         {
             InitializeComponent();
+        }
+
+        public PTP_Sample(POP_EmpAdd POP, string ment)
+        {
+            InitializeComponent();
+
+            p1 = POP;
 
             this.TcTT = ment;
 
@@ -42,13 +52,38 @@ namespace _2018848063_ERP
         }
         #endregion
 
+        #region 더블클릭시 실행
         private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            POP_EmpAdd POP = new POP_EmpAdd();
-
-            POP.txt_Depart.Text = "aa";
             
+            DV = this.dataGridView1.Rows[this.dataGridView1.CurrentCellAddress.Y].Cells[1].Value.ToString();
+
+            TcTT_Check();
+
+            employee emp = new employee();
+            emp.DB_Select();
+
             this.Close();
         }
+
+        #region 부모폼 텍스트 박스 확인
+        public void TcTT_Check()
+        {
+            if(TcTT == "Department")
+            {
+                p1.txt_Depart.Text = DV;
+            }
+            else if (TcTT == "Grade")
+            {
+                p1.txt_Grade.Text = DV;
+            }
+            else if (TcTT == "WForm")
+            {
+                p1.txt_WForm.Text = DV;
+            }
+        }
+        #endregion
+
+        #endregion
     }
 }
