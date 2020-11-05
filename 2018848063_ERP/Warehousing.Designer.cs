@@ -46,13 +46,13 @@
             this.groupBox1.Controls.Add(this.Button1);
             this.groupBox1.Location = new System.Drawing.Point(2, -4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1052, 125);
+            this.groupBox1.Size = new System.Drawing.Size(1246, 125);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
             // Button1
             // 
-            this.Button1.Location = new System.Drawing.Point(1005, 81);
+            this.Button1.Location = new System.Drawing.Point(1203, 81);
             this.Button1.Name = "Button1";
             this.Button1.Size = new System.Drawing.Size(37, 38);
             this.Button1.TabIndex = 0;
@@ -65,7 +65,7 @@
             this.groupBox2.Controls.Add(this.Spread_Item);
             this.groupBox2.Location = new System.Drawing.Point(2, 127);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1052, 235);
+            this.groupBox2.Size = new System.Drawing.Size(1246, 245);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "목록";
@@ -80,15 +80,16 @@
             this.Spread_Item.ReadOnly = true;
             this.Spread_Item.RowTemplate.Height = 23;
             this.Spread_Item.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Spread_Item.Size = new System.Drawing.Size(1046, 215);
+            this.Spread_Item.Size = new System.Drawing.Size(1240, 225);
             this.Spread_Item.TabIndex = 0;
+            this.Spread_Item.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Spread_Item_CellClick);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.Spread_Detail);
-            this.groupBox3.Location = new System.Drawing.Point(2, 368);
+            this.groupBox3.Location = new System.Drawing.Point(2, 378);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1052, 235);
+            this.groupBox3.Size = new System.Drawing.Size(1249, 256);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "상세";
@@ -102,7 +103,7 @@
             this.Spread_Detail.Name = "Spread_Detail";
             this.Spread_Detail.RowTemplate.Height = 23;
             this.Spread_Detail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Spread_Detail.Size = new System.Drawing.Size(1046, 215);
+            this.Spread_Detail.Size = new System.Drawing.Size(1243, 236);
             this.Spread_Detail.TabIndex = 0;
             // 
             // Warehousing
@@ -110,7 +111,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1056, 605);
+            this.ClientSize = new System.Drawing.Size(1252, 635);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

@@ -8,7 +8,9 @@ namespace _2018848063_ERP
     public partial class Employee : Form
     {
         string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
-        string Ssql = "SELECT Emp.EmpNo, Emp.Name, Dep.DP_Name, GR.GR_Name, WF.WF_Name, emp.PhoneNum, emp.Join_Date From employee Emp Left Outer Join Department Dep On emp.Depart = Dep.DP_Code Left Outer Join Grade GR ON emp.Grade = GR.GR_Code Left Outer Join WForm WF ON emp.WForm = WF.WF_Code";
+        string Ssql = "SELECT Emp.EmpNo, Emp.Name, Dep.DP_Name, GR.GR_Name, WF.WF_Name, emp.PhoneNum, emp.Join_Date From employee Emp Left Outer Join Department Dep On emp.Depart = Dep.DP_Code Left Outer Join Grade GR ON emp.Grade = GR.GR_Code Left Outer Join WForm WF ON emp.WForm = WF.WF_Code WHERE Emp.Name = Case When @Name = '' then Emp.Name else @Name end";
+        //https://newstory-of-dev.tistory.com/entry/MSSQL-인자값이-있으면-비교-없으면-비교안하는-쿼리-1
+        //해당 쿼리를 저장 프로시저로 변경할 수 있도록 하기
 
         public Employee()
         {

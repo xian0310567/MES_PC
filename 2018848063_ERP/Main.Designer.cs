@@ -43,7 +43,7 @@
             this.입고ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1056, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1252, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -73,7 +73,7 @@
             // 입고ToolStripMenuItem1
             // 
             this.입고ToolStripMenuItem1.Name = "입고ToolStripMenuItem1";
-            this.입고ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.입고ToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.입고ToolStripMenuItem1.Text = "상품 입고";
             this.입고ToolStripMenuItem1.Click += new System.EventHandler(this.입고ToolStripMenuItem1_Click);
             // 
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 605);
+            this.ClientSize = new System.Drawing.Size(1252, 635);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
