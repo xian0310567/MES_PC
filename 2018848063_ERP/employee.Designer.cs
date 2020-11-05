@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.table_Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Sch_Depart = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,9 +38,11 @@
             this.Btn_Regi = new System.Windows.Forms.Button();
             this.Btn_Delete = new System.Windows.Forms.Button();
             this.Btn_Search = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.table_Check = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,27 +54,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1056, 605);
             this.panel1.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.table_Check});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1048, 540);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // table_Check
-            // 
-            this.table_Check.Frozen = true;
-            this.table_Check.HeaderText = " ";
-            this.table_Check.Name = "table_Check";
-            this.table_Check.Width = 15;
             // 
             // groupBox1
             // 
@@ -89,7 +68,7 @@
             this.groupBox1.Controls.Add(this.Btn_Search);
             this.groupBox1.Location = new System.Drawing.Point(0, -6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1056, 75);
+            this.groupBox1.Size = new System.Drawing.Size(1056, 66);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -145,6 +124,7 @@
             this.Btn_Print.TabIndex = 2;
             this.Btn_Print.Text = "인쇄";
             this.Btn_Print.UseVisualStyleBackColor = true;
+            this.Btn_Print.Click += new System.EventHandler(this.Btn_Print_Click);
             // 
             // Btn_Regi
             // 
@@ -179,21 +159,42 @@
             this.Btn_Search.UseVisualStyleBackColor = true;
             this.Btn_Search.Click += new System.EventHandler(this.Btn_Search_Click);
             // 
-            // employee
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.table_Check});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 59);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1056, 546);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // table_Check
+            // 
+            this.table_Check.Frozen = true;
+            this.table_Check.HeaderText = " ";
+            this.table_Check.Name = "table_Check";
+            this.table_Check.Width = 15;
+            // 
+            // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 605);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
-            this.Name = "employee";
+            this.Name = "Employee";
             this.ShowInTaskbar = false;
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,11 +207,11 @@
         private System.Windows.Forms.Button Btn_Print;
         private System.Windows.Forms.Button Btn_Regi;
         private System.Windows.Forms.Button Btn_Delete;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox Sch_Depart;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Sch_Name;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn table_Check;
     }
 }

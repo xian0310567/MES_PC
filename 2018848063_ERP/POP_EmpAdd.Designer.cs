@@ -45,19 +45,22 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.txt_Join_Date = new System.Windows.Forms.DateTimePicker();
+            this.txt_Depart_C = new System.Windows.Forms.TextBox();
+            this.txt_Grade_C = new System.Windows.Forms.TextBox();
+            this.txt_WForm_C = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txt_Name
             // 
-            this.txt_Name.Location = new System.Drawing.Point(106, 31);
+            this.txt_Name.Location = new System.Drawing.Point(88, 22);
             this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(150, 21);
+            this.txt_Name.Size = new System.Drawing.Size(230, 21);
             this.txt_Name.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(60, 34);
+            this.label1.Location = new System.Drawing.Point(45, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 1;
@@ -66,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 78);
+            this.label2.Location = new System.Drawing.Point(45, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 3;
@@ -74,16 +77,16 @@
             // 
             // txt_Depart
             // 
-            this.txt_Depart.Location = new System.Drawing.Point(106, 75);
+            this.txt_Depart.Location = new System.Drawing.Point(88, 66);
             this.txt_Depart.Name = "txt_Depart";
             this.txt_Depart.ReadOnly = true;
-            this.txt_Depart.Size = new System.Drawing.Size(150, 21);
+            this.txt_Depart.Size = new System.Drawing.Size(118, 21);
             this.txt_Depart.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(60, 125);
+            this.label3.Location = new System.Drawing.Point(45, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 5;
@@ -91,16 +94,16 @@
             // 
             // txt_Grade
             // 
-            this.txt_Grade.Location = new System.Drawing.Point(106, 122);
+            this.txt_Grade.Location = new System.Drawing.Point(88, 113);
             this.txt_Grade.Name = "txt_Grade";
             this.txt_Grade.ReadOnly = true;
-            this.txt_Grade.Size = new System.Drawing.Size(150, 21);
+            this.txt_Grade.Size = new System.Drawing.Size(118, 21);
             this.txt_Grade.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 172);
+            this.label4.Location = new System.Drawing.Point(21, 163);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 7;
@@ -108,16 +111,16 @@
             // 
             // txt_WForm
             // 
-            this.txt_WForm.Location = new System.Drawing.Point(106, 169);
+            this.txt_WForm.Location = new System.Drawing.Point(88, 160);
             this.txt_WForm.Name = "txt_WForm";
             this.txt_WForm.ReadOnly = true;
-            this.txt_WForm.Size = new System.Drawing.Size(150, 21);
+            this.txt_WForm.Size = new System.Drawing.Size(118, 21);
             this.txt_WForm.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 221);
+            this.label5.Location = new System.Drawing.Point(33, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 12);
             this.label5.TabIndex = 9;
@@ -125,15 +128,15 @@
             // 
             // txt_Phone_num
             // 
-            this.txt_Phone_num.Location = new System.Drawing.Point(106, 218);
+            this.txt_Phone_num.Location = new System.Drawing.Point(88, 209);
             this.txt_Phone_num.Name = "txt_Phone_num";
-            this.txt_Phone_num.Size = new System.Drawing.Size(150, 21);
+            this.txt_Phone_num.Size = new System.Drawing.Size(230, 21);
             this.txt_Phone_num.TabIndex = 8;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(48, 271);
+            this.label6.Location = new System.Drawing.Point(33, 262);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 11;
@@ -141,7 +144,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(38, 310);
+            this.button1.Location = new System.Drawing.Point(70, 301);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(94, 56);
             this.button1.TabIndex = 12;
@@ -151,7 +154,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(181, 310);
+            this.button2.Location = new System.Drawing.Point(190, 301);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(94, 56);
             this.button2.TabIndex = 13;
@@ -161,7 +164,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(256, 74);
+            this.button3.Location = new System.Drawing.Point(208, 65);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(21, 23);
             this.button3.TabIndex = 14;
@@ -171,7 +174,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(256, 121);
+            this.button4.Location = new System.Drawing.Point(208, 112);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(21, 23);
             this.button4.TabIndex = 15;
@@ -181,7 +184,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(256, 168);
+            this.button5.Location = new System.Drawing.Point(208, 159);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(21, 23);
             this.button5.TabIndex = 16;
@@ -192,16 +195,43 @@
             // txt_Join_Date
             // 
             this.txt_Join_Date.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txt_Join_Date.Location = new System.Drawing.Point(103, 262);
+            this.txt_Join_Date.Location = new System.Drawing.Point(88, 253);
             this.txt_Join_Date.Name = "txt_Join_Date";
-            this.txt_Join_Date.Size = new System.Drawing.Size(153, 21);
+            this.txt_Join_Date.Size = new System.Drawing.Size(230, 21);
             this.txt_Join_Date.TabIndex = 17;
+            // 
+            // txt_Depart_C
+            // 
+            this.txt_Depart_C.Location = new System.Drawing.Point(230, 66);
+            this.txt_Depart_C.Name = "txt_Depart_C";
+            this.txt_Depart_C.ReadOnly = true;
+            this.txt_Depart_C.Size = new System.Drawing.Size(88, 21);
+            this.txt_Depart_C.TabIndex = 18;
+            // 
+            // txt_Grade_C
+            // 
+            this.txt_Grade_C.Location = new System.Drawing.Point(230, 113);
+            this.txt_Grade_C.Name = "txt_Grade_C";
+            this.txt_Grade_C.ReadOnly = true;
+            this.txt_Grade_C.Size = new System.Drawing.Size(88, 21);
+            this.txt_Grade_C.TabIndex = 19;
+            // 
+            // txt_WForm_C
+            // 
+            this.txt_WForm_C.Location = new System.Drawing.Point(230, 160);
+            this.txt_WForm_C.Name = "txt_WForm_C";
+            this.txt_WForm_C.ReadOnly = true;
+            this.txt_WForm_C.Size = new System.Drawing.Size(88, 21);
+            this.txt_WForm_C.TabIndex = 20;
             // 
             // POP_EmpAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(315, 391);
+            this.ClientSize = new System.Drawing.Size(339, 377);
+            this.Controls.Add(this.txt_WForm_C);
+            this.Controls.Add(this.txt_Grade_C);
+            this.Controls.Add(this.txt_Depart_C);
             this.Controls.Add(this.txt_Join_Date);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -245,5 +275,8 @@
         public System.Windows.Forms.TextBox txt_Grade;
         public System.Windows.Forms.TextBox txt_WForm;
         private System.Windows.Forms.DateTimePicker txt_Join_Date;
+        public System.Windows.Forms.TextBox txt_Depart_C;
+        public System.Windows.Forms.TextBox txt_Grade_C;
+        public System.Windows.Forms.TextBox txt_WForm_C;
     }
 }

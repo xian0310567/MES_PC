@@ -27,7 +27,7 @@ namespace _2018848063_ERP
                 MessageBox.Show(ex.ToString());
             }
         }
-
+        
         public DataSet DBSelect(string Ssql)
         {
                 SqlConnection conn = new SqlConnection(dbcon);

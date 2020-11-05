@@ -1,21 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Security.Cryptography.X509Certificates;
+using System.Windows.Forms;
 
 namespace _2018848063_ERP
 {
     public partial class Employee : Form
     {
         string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
-        string Ssql = "SELECT EmpNo, Name,Depart,Grade,WForm,PhoneNum,Join_Date FROM Employee";
+        string Ssql = "SELECT Emp.EmpNo, Emp.Name, Dep.DP_Name, GR.GR_Name, WF.WF_Name, emp.PhoneNum, emp.Join_Date From employee Emp Left Outer Join Department Dep On emp.Depart = Dep.DP_Code Left Outer Join Grade GR ON emp.Grade = GR.GR_Code Left Outer Join WForm WF ON emp.WForm = WF.WF_Code";
 
         public Employee()
         {
@@ -33,13 +26,20 @@ namespace _2018848063_ERP
         public void DB_Select()
         {
             SqlConnection conn = new SqlConnection(dbcon);
+            SqlCommand cmd = new SqlCommand(Ssql, conn);
+            cmd.Parameters.AddWithValue("@Name", Sch_Name.Text);
+            //검색 텍스트박스가 비어 있으면 = 모든값, 조건이 있으면 = 조건에 맞는 값 출력 할 수 있게 변경하기
 
-            SqlDataAdapter da = new SqlDataAdapter(Ssql, conn);
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
 
             da.Fill(ds);
 
             dataGridView1.DataSource = ds.Tables[0];
+
+            column_Name();
+            //받아온 데이터를 gridview에 뿌려줌
         }
         #endregion
 
@@ -75,7 +75,7 @@ namespace _2018848063_ERP
 
                         DB_Select();
 
-                        //여러개를 한번에 삭제 할 수 있는 기능 추가하기
+                        //한번에 여러개가 삭제되지 않는 이유 찾기
                     }
                     catch (Exception ex)
                     {
@@ -83,6 +83,25 @@ namespace _2018848063_ERP
                     }
                 }
             }
+        }
+        #endregion
+
+        #region 인쇄버튼
+        private void Btn_Print_Click(object sender, EventArgs e)
+        {
+        }
+        #endregion
+
+        #region 컬럼명 변경
+        public void column_Name()
+        {
+            dataGridView1.Columns[1].HeaderText = "직원번호";
+            dataGridView1.Columns[2].HeaderText = "이름";
+            dataGridView1.Columns[3].HeaderText = "부서";
+            dataGridView1.Columns[4].HeaderText = "직책";
+            dataGridView1.Columns[5].HeaderText = "고용형태";
+            dataGridView1.Columns[6].HeaderText = "전화번호";
+            dataGridView1.Columns[7].HeaderText = "입사일";
         }
         #endregion
     }

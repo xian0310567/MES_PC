@@ -31,13 +31,16 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.사원정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.입고ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.입고ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.정보ToolStripMenuItem});
+            this.정보ToolStripMenuItem,
+            this.입고ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1056, 24);
@@ -55,9 +58,24 @@
             // 사원정보ToolStripMenuItem
             // 
             this.사원정보ToolStripMenuItem.Name = "사원정보ToolStripMenuItem";
-            this.사원정보ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.사원정보ToolStripMenuItem.Text = "사원정보";
+            this.사원정보ToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.사원정보ToolStripMenuItem.Text = "사원 정보";
             this.사원정보ToolStripMenuItem.Click += new System.EventHandler(this.사원정보ToolStripMenuItem_Click);
+            // 
+            // 입고ToolStripMenuItem
+            // 
+            this.입고ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.입고ToolStripMenuItem1});
+            this.입고ToolStripMenuItem.Name = "입고ToolStripMenuItem";
+            this.입고ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.입고ToolStripMenuItem.Text = "입고";
+            // 
+            // 입고ToolStripMenuItem1
+            // 
+            this.입고ToolStripMenuItem1.Name = "입고ToolStripMenuItem1";
+            this.입고ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.입고ToolStripMenuItem1.Text = "상품 입고";
+            this.입고ToolStripMenuItem1.Click += new System.EventHandler(this.입고ToolStripMenuItem1_Click);
             // 
             // Main
             // 
@@ -81,6 +99,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 정보ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 사원정보ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 입고ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 입고ToolStripMenuItem1;
     }
 }
 

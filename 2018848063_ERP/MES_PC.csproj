@@ -53,6 +53,12 @@
     <Compile Include="Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
+    <Compile Include="Warehousing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Warehousing.Designer.cs">
+      <DependentUpon>Warehousing.cs</DependentUpon>
+    </Compile>
     <Compile Include="PTP_Sample.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     </Compile>
     <EmbeddedResource Include="PTP_Sample.resx">
       <DependentUpon>PTP_Sample.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Warehousing.resx">
+      <DependentUpon>Warehousing.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

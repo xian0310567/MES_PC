@@ -59,9 +59,9 @@ namespace _2018848063_ERP
                 SqlCommand cmd = new SqlCommand(Ssql, conn);
 
                 cmd.Parameters.AddWithValue("@Name", txt_Name.Text);
-                cmd.Parameters.AddWithValue("@Depart", txt_Depart.Text);
-                cmd.Parameters.AddWithValue("@Grade", txt_Grade.Text);
-                cmd.Parameters.AddWithValue("@WForm", txt_WForm.Text);
+                cmd.Parameters.AddWithValue("@Depart", txt_Depart_C.Text);
+                cmd.Parameters.AddWithValue("@Grade", txt_Grade_C.Text);
+                cmd.Parameters.AddWithValue("@WForm", txt_WForm_C.Text);
                 cmd.Parameters.AddWithValue("@Phone_Num", txt_Phone_num.Text);
                 cmd.Parameters.AddWithValue("@Join_Date", txt_Join_Date.Text);
                 cmd.Parameters.AddWithValue("@Date", DateTime.Now.ToString("yyyy-MM-dd"));
@@ -90,7 +90,7 @@ namespace _2018848063_ERP
         public void reset_Text()
         {
             txt_Name.Text = "";
-            txt_Depart.Text = "Depart";
+            txt_Depart.Text = "";
             txt_Grade.Text = "";
             txt_WForm.Text = "";
             txt_Phone_num.Text = "";
