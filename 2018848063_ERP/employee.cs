@@ -8,9 +8,6 @@ namespace _2018848063_ERP
     public partial class Employee : Form
     {
         string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
-        string Ssql = "SELECT Emp.EmpNo, Emp.Name, Dep.DP_Name, GR.GR_Name, WF.WF_Name, emp.PhoneNum, emp.Join_Date From employee Emp Left Outer Join Department Dep On emp.Depart = Dep.DP_Code Left Outer Join Grade GR ON emp.Grade = GR.GR_Code Left Outer Join WForm WF ON emp.WForm = WF.WF_Code WHERE Emp.Name = Case When @Name = '' then Emp.Name else @Name end";
-        //https://newstory-of-dev.tistory.com/entry/MSSQL-인자값이-있으면-비교-없으면-비교안하는-쿼리-1
-        //해당 쿼리를 저장 프로시저로 변경할 수 있도록 하기
 
         public Employee()
         {
@@ -28,9 +25,9 @@ namespace _2018848063_ERP
         public void DB_Select()
         {
             SqlConnection conn = new SqlConnection(dbcon);
-            SqlCommand cmd = new SqlCommand(Ssql, conn);
+            SqlCommand cmd = new SqlCommand("SLT_Employee @Name", conn);
             cmd.Parameters.AddWithValue("@Name", Sch_Name.Text);
-            //검색 텍스트박스가 비어 있으면 = 모든값, 조건이 있으면 = 조건에 맞는 값 출력 할 수 있게 변경하기
+            //저장 프로시저로 해당 SQL을 검색하여 가져옴
 
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -41,7 +38,6 @@ namespace _2018848063_ERP
             dataGridView1.DataSource = ds.Tables[0];
 
             column_Name();
-            //받아온 데이터를 gridview에 뿌려줌
         }
         #endregion
 
