@@ -32,8 +32,8 @@ namespace _2018848063_ERP
         {
 
             SqlConnection conn = new SqlConnection(dbcon);
-            SqlCommand cmd = new SqlCommand("SLT_ItemMaster", conn);
-            //검색 텍스트박스가 비어 있으면 = 모든값, 조건이 있으면 = 조건에 맞는 값 출력 할 수 있게 변경하기
+            SqlCommand cmd = new SqlCommand("SLT_ItemMaster @ChitNo", conn);
+            cmd.Parameters.AddWithValue("@ChitNo", txt_ChitNo.Text);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();

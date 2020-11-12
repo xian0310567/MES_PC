@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button5 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_ChitNo = new System.Windows.Forms.TextBox();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             // 
             this.groupBox1.Controls.Add(this.button5);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txt_ChitNo);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -98,12 +98,12 @@
             this.label7.TabIndex = 17;
             this.label7.Text = "전표번호";
             // 
-            // textBox5
+            // txt_ChitNo
             // 
-            this.textBox5.Location = new System.Drawing.Point(320, 76);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(206, 21);
-            this.textBox5.TabIndex = 16;
+            this.txt_ChitNo.Location = new System.Drawing.Point(320, 76);
+            this.txt_ChitNo.Name = "txt_ChitNo";
+            this.txt_ChitNo.Size = new System.Drawing.Size(206, 21);
+            this.txt_ChitNo.TabIndex = 16;
             // 
             // dateTimePicker2
             // 
@@ -312,6 +312,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_ChitNo;
     }
 }
