@@ -41,9 +41,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Customer = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Customer = new System.Windows.Forms.TextBox();
             this.Button1 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.Spread_Item = new System.Windows.Forms.DataGridView();
@@ -70,9 +70,9 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btn_Customer);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txt_Customer);
             this.groupBox1.Controls.Add(this.Button1);
             this.groupBox1.Location = new System.Drawing.Point(2, -4);
             this.groupBox1.Name = "groupBox1";
@@ -154,7 +154,6 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(320, 31);
             this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(160, 21);
             this.textBox4.TabIndex = 10;
             // 
@@ -180,18 +179,18 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(76, 74);
             this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(101, 21);
             this.textBox2.TabIndex = 4;
             // 
-            // button2
+            // btn_Customer
             // 
-            this.button2.Location = new System.Drawing.Point(177, 29);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(46, 22);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "검색";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Customer.Location = new System.Drawing.Point(177, 29);
+            this.btn_Customer.Name = "btn_Customer";
+            this.btn_Customer.Size = new System.Drawing.Size(46, 22);
+            this.btn_Customer.TabIndex = 3;
+            this.btn_Customer.Text = "검색";
+            this.btn_Customer.UseVisualStyleBackColor = true;
+            this.btn_Customer.Click += new System.EventHandler(this.btn_Customer_Click);
             // 
             // label1
             // 
@@ -202,13 +201,12 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "거래처";
             // 
-            // textBox1
+            // txt_Customer
             // 
-            this.textBox1.Location = new System.Drawing.Point(76, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(101, 21);
-            this.textBox1.TabIndex = 1;
+            this.txt_Customer.Location = new System.Drawing.Point(76, 30);
+            this.txt_Customer.Name = "txt_Customer";
+            this.txt_Customer.Size = new System.Drawing.Size(101, 21);
+            this.txt_Customer.TabIndex = 1;
             // 
             // Button1
             // 
@@ -298,9 +296,9 @@
         private System.Windows.Forms.DataGridView Spread_Item;
         private System.Windows.Forms.DataGridView Spread_Detail;
         private System.Windows.Forms.Button Button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Customer;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Customer;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button button3;

@@ -17,36 +17,52 @@ namespace _2018848063_ERP
         string TcTT;
         string CV, DV;
         string dbcon = "Server=localhost; uid=sa; pwd=FPN_finger1; database=ERP_PF;";
+        string SQL;
 
         POP_EmpAdd p1;
+        Warehousing W1;
 
         public PTP_Sample()
         {
             InitializeComponent();
         }
 
+        #region 여러가지 부모폼에서 인자값을 받아오기 위함
         public PTP_Sample(POP_EmpAdd POP, string ment)
         {
             InitializeComponent();
 
             p1 = POP;
-
             this.TcTT = ment;
+
+            SQL = "SELECT * FROM " + TcTT;
 
             DBSelect();
         }
-        //PTP_Sample 폼에서 POP_EmpAdd폼으로 값을 전달하기 위해 새로운 참조 사용
+        //POP_EmpAdd
 
+        public PTP_Sample(Warehousing WH, string ment)
+        {
+            InitializeComponent();
+
+            W1 = WH;
+            this.TcTT = ment;
+
+            SQL = TcTT;
+
+            DBSelect();
+        }
+        //Warehousing
+        #endregion
 
         #region 조회 기능
         private void  DBSelect()
         {
-            string Ssql = "SELECT * FROM " + TcTT;
             // 받아온 기본 값을 바탕으로 테이블을 불러옴
 
             SqlConnection conn = new SqlConnection(dbcon);
 
-            SqlDataAdapter da = new SqlDataAdapter(Ssql, conn);
+            SqlDataAdapter da = new SqlDataAdapter(SQL, conn);
             DataSet ds = new DataSet();
 
             da.Fill(ds);
@@ -63,31 +79,27 @@ namespace _2018848063_ERP
             //코드 번호를 제외한 부서명, 직급명, 고용형태 받아옴
 
             TcTT_Check();
-            //CV, DV값을 POP_EmpAdd 폼의 텍스트 박스에 넣어줌
-
-            Employee emp = new Employee();
-            emp.DB_Select();
+            //CV, DV값을 확인하여 상황에 맞는 이벤트 실행
 
             this.Close();
         }
 
-        #region 부모폼 텍스트 박스 확인
+        #region TcTT 값 확인
         public void TcTT_Check()
         {
-            if(TcTT == "Department")
-            {
-                p1.txt_Depart.Text = DV;
-                p1.txt_Depart_C.Text = CV;
-            }
-            else if (TcTT == "Grade")
-            {
-                p1.txt_Grade.Text = DV;
-                p1.txt_Grade_C.Text = CV;
-            }
-            else if (TcTT == "WForm")
-            {
-                p1.txt_WForm.Text = DV;
-                p1.txt_WForm_C.Text = CV;
+            switch(TcTT) {
+                case "Department":  //POP_EmpAdd_부서
+                    p1.txt_Depart.Text = DV;
+                    p1.txt_Depart_C.Text = CV;
+                    break;
+                case "Grade":   //POP_EmpAdd_직급
+                    p1.txt_Grade.Text = DV;
+                    p1.txt_Grade_C.Text = CV;
+                    break;
+                case "WForm":   //POP_EmpAdd_고용형태
+                    p1.txt_WForm.Text = DV;
+                    p1.txt_WForm_C.Text = CV;
+                    break;
             }
         }
         #endregion

@@ -47,10 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBHelper.cs" />
-    <Compile Include="Employee.cs">
+    <Compile Include="Employee\Employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Employee.Designer.cs">
+    <Compile Include="Employee\Employee.Designer.cs">
       <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Warehousing.cs">
@@ -59,16 +59,16 @@
     <Compile Include="Warehousing.Designer.cs">
       <DependentUpon>Warehousing.cs</DependentUpon>
     </Compile>
-    <Compile Include="PTP_Sample.cs">
+    <Compile Include="Employee\PTP_Sample.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PTP_Sample.Designer.cs">
+    <Compile Include="Employee\PTP_Sample.Designer.cs">
       <DependentUpon>PTP_Sample.cs</DependentUpon>
     </Compile>
-    <Compile Include="POP_EmpAdd.cs">
+    <Compile Include="Employee\POP_EmpAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POP_EmpAdd.Designer.cs">
+    <Compile Include="Employee\POP_EmpAdd.Designer.cs">
       <DependentUpon>POP_EmpAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
@@ -79,10 +79,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Employee.resx">
+    <EmbeddedResource Include="Employee\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POP_EmpAdd.resx">
+    <EmbeddedResource Include="Employee\POP_EmpAdd.resx">
       <DependentUpon>POP_EmpAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
@@ -97,7 +97,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PTP_Sample.resx">
+    <EmbeddedResource Include="Employee\PTP_Sample.resx">
       <DependentUpon>PTP_Sample.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Warehousing.resx">

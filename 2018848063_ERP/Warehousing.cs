@@ -94,5 +94,14 @@ namespace _2018848063_ERP
             //받아온 데이터를 gridview에 뿌려줌
         }
         #endregion
+
+        private void btn_Customer_Click(object sender, EventArgs e)
+        {
+            string SQL = "SELECT ItemNo, Customer FROM Item_Master";
+
+            PTP_Sample PTP = new PTP_Sample(this, SQL);
+            PTP.Owner = this;
+            PTP.ShowDialog();
+        }
     }
 }
