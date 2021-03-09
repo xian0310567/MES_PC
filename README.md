@@ -1,4 +1,4 @@
-# C#.net, MSSQL 포트폴리오용 ERP
+# C#.net, MSSQL 포트폴리오
 
 <hr>
 
